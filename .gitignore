@@ -6,4 +6,4 @@
 [Dd]ebug*/
 obj/
 tmp/
-*TwitterCredentialStore.cs
+Linq2TwitterSample/TwitterCredentialStore.cs
