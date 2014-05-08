@@ -14,11 +14,11 @@ namespace Linq2TwitterSample
 	{
 
 		const string CellID = "TweetCell";
-		List<Tweet> tweets { get; set; }
+		List<Status> tweets { get; set; }
 
 		public TwitterTableSource ()
 		{
-			tweets = new List<Tweet> ();
+			tweets = new List<Status> ();
 			GetTweets ();
 		}
 
@@ -68,11 +68,7 @@ namespace Linq2TwitterSample
 
 			tweets = await (from tweet in twitterContext.Status
 				where tweet.Type == LinqToTwitter.StatusType.User 
-				select new Tweet {
-					ScreenName = "test",
-					StatusID = 1,
-					Text = "asd",
-				}).ToListAsync ();
+				select tweet).ToListAsync ();
 						
 		}
 
